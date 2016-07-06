@@ -1,3 +1,4 @@
+<%=link_to 'Log out', destroy_user_session_path, :method => :delete%>
 <% flash.each do |message_type, message| %>
     <div><%=message%></div>
 <% end %>
