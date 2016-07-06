@@ -1,9 +1,12 @@
 class UsersController < ApplicationController
   before_filter :set_params, only: [:show,:update,:destroy]
   before_filter :authenticate_user!
+  after_action :verify_authorized
 
   def index
     @users=User.all
+
+    authorize User
   end
 
   def show
@@ -11,6 +14,9 @@ class UsersController < ApplicationController
   end
 
   def update
+
+    authorize @user
+
     if @user.update(secured_params)
       redirect_to users_path, :success => "Succesfully Updated"
     else
@@ -19,6 +25,8 @@ class UsersController < ApplicationController
   end
 
   def destroy
+    authorize @user
+
     @user.destroy
     redirect_to users_path
   end

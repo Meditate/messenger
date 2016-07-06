@@ -3,6 +3,7 @@
       email: <%=user.email%>
       <%=f.input :role, collection: (User.roles.keys).map{|role| [role.titleize,role]} %>
       <%=f.submit %>
+      <%=link_to 'Delete User', user_path(user), :method => :delete %>
   <% end %>
 
 </p>

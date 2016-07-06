@@ -13,13 +13,13 @@ feature 'Users Index' do
 
   end
 
-  scenario 'User can see Users index page if logged in'do
+  scenario 'User cant see Users index page if logged in'do
 
     signin(user.email,user.password)
 
     visit users_path
 
-    expect(page).to have_content('Users list')
+    expect(page).not_to have_content('Users list')
 
   end
 
