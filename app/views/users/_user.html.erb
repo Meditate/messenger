@@ -1,4 +1,8 @@
 <p>
-  email:
-  <%=user.email%>
+  <%=simple_form_for(user) do |f| %>
+      email: <%=user.email%>
+      <%=f.input :role, collection: (User.roles.keys).map{|role| [role.titleize,role]} %>
+      <%=f.submit %>
+  <% end %>
+
 </p>

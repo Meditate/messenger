@@ -11,7 +11,7 @@ class UsersController < ApplicationController
   end
 
   def update
-    if @user.upadate(secured_params)
+    if @user.update(secured_params)
       redirect_to users_path, :success => "Succesfully Updated"
     else
       redirect_to uesrs_path, :alert => "Unable to Update user"
