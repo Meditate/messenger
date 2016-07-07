@@ -4,7 +4,7 @@ class UsersController < ApplicationController
   after_action :verify_authorized
 
   def index
-    @users=User.all
+  @users=User.order("role DESC").page(params[:page]).per(5)
 
     authorize User
   end
