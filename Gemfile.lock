@@ -100,6 +100,9 @@ GEM
       nokogiri (>= 1.5.9)
     mail (2.6.4)
       mime-types (>= 1.16, < 4)
+    mail_form (1.5.1)
+      actionmailer (>= 3.2, < 5)
+      activemodel (>= 3.2, < 5)
     mailcatcher (0.6.4)
       activesupport (~> 4.0)
       eventmachine (= 1.0.9.1)
@@ -240,6 +243,7 @@ DEPENDENCIES
   jbuilder (~> 2.0)
   jquery-rails
   kaminari
+  mail_form
   mailcatcher
   pundit
   rails (= 4.2.5.1)

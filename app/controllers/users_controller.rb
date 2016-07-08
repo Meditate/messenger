@@ -4,8 +4,7 @@ class UsersController < ApplicationController
   after_action :verify_authorized
 
   def index
-  @users=User.order("role DESC").page(params[:page]).per(5)
-
+    @users=User.order("role DESC").page(params[:page]).per(5)
     authorize User
   end
 
@@ -39,5 +38,13 @@ class UsersController < ApplicationController
 
   def secured_params
     params.require(:user).permit(:role)
+  end
+
+  def send_mail
+    user=User.find_by_email('admin@example.com')
+    email='aroundofyou@gmail.com'
+    body = params[:body]
+    UserMailer.user_email(user,email,body).deliver
+    redirect_to users_path, notice: 'Message sent'
   end
 end

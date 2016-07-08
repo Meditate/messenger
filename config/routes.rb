@@ -6,4 +6,6 @@ Rails.application.routes.draw do
 
   resources :users
 
+  match '/send_mail', to: 'users#send_mail', via: 'post'
+
 end
