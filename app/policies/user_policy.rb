@@ -17,4 +17,8 @@ class UserPolicy
   def update?
     @current_user.admin?
   end
+
+  def send_mail?
+    @current_user.admin? or @current_user.editor?
+  end
 end

@@ -5,6 +5,7 @@ class UsersController < ApplicationController
 
   def index
     @users=User.order("role DESC").page(params[:page]).per(5)
+
     authorize User
   end
 
@@ -30,6 +31,15 @@ class UsersController < ApplicationController
     redirect_to users_path
   end
 
+  def send_mail
+    authorize User
+
+    email='aroundofyou@gmail.com'
+    body = params[:body]
+    UserMailer.user_email(email,body).deliver
+    redirect_to users_path
+  end
+
   private
 
   def set_params
@@ -40,11 +50,5 @@ class UsersController < ApplicationController
     params.require(:user).permit(:role)
   end
 
-  def send_mail
-    user=User.find_by_email('admin@example.com')
-    email='aroundofyou@gmail.com'
-    body = params[:body]
-    UserMailer.user_email(user,email,body).deliver
-    redirect_to users_path, notice: 'Message sent'
-  end
+
 end
