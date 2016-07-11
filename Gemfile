@@ -15,7 +15,7 @@ gem 'simple_form'
 gem 'bootstrap-sass'
 gem 'devise'
 gem 'pundit'
-gem 'mail_form'
+gem 'figaro'
 
 group :development, :test do
   gem 'byebug'

@@ -33,10 +33,7 @@ class UsersController < ApplicationController
 
   def send_mail
     authorize User
-
-    email='aroundofyou@gmail.com'
-    body = params[:body]
-    UserMailer.user_email(email,body).deliver
+    UserMailer.user_email(params[:email]).deliver
     redirect_to users_path
   end
 
