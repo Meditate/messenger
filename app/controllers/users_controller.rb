@@ -33,7 +33,11 @@ class UsersController < ApplicationController
 
   def send_mail
     authorize User
-    UserMailer.user_email(params[:email]).deliver
+    @users=User.all
+    @users.each do |r|
+      @email=r.email
+      UserMailer.user_email(@email,params[:email]).deliver
+    end
     redirect_to users_path
   end
 

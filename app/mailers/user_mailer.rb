@@ -2,9 +2,10 @@ class UserMailer < ApplicationMailer
   default from: 'aroundofyou@gmail.com'
   layout 'mailer'
 
-  def user_email(email_params)
+  def user_email(email,email_params)
+    @email=email
     @content=email_params[:content]
-    @email=ENV['inbox']
     mail(to: @email, subject: 'Admin mail')
   end
+
 end
