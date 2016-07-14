@@ -15,3 +15,91 @@
  */
 @import "bootstrap-sprockets";
 @import "bootstrap";
+
+$secondarycolor:#3CBC8D;
+$darkercolor:#3CBC8D;
+nav{
+  /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#5cab7d+30,7cb7a1+99 */
+  background: #5cab7d; /* Old browsers */
+  background: -moz-linear-gradient(45deg, $secondarycolor 30%, #7cb7a1 99%); /* FF3.6-15 */
+  background: -webkit-linear-gradient(45deg, $secondarycolor 30%,#7cb7a1 99%); /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(45deg, $secondarycolor 30%,#7cb7a1 99%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='$secondarycolor', endColorstr='#7cb7a1',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */a{
+    color: white !important;
+  }
+  span{
+    background-color: white !important;
+  }
+  .navbar-text{
+    color: white !important;
+  }
+}
+#emailform{
+  textarea{
+    min-height:150px !important;
+    border-color: $secondarycolor !important;
+  }
+  .btn-default{
+    background-color: $secondarycolor !important;
+    color:white;
+  }
+}
+.col-md-3{
+  text-align: center !important;
+  .btn{
+    width:100%;
+    background-color: $secondarycolor;
+    color:white;
+  }
+}
+.well{
+  background: #5cab7d; /* Old browsers */
+  background: -moz-linear-gradient(45deg, $secondarycolor 30%, #7cb7a1 99%); /* FF3.6-15 */
+  background: -webkit-linear-gradient(45deg, $secondarycolor 30%,#7cb7a1 99%); /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(45deg, $secondarycolor 30%,#7cb7a1 99%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='$secondarycolor', endColorstr='#7cb7a1',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */a{
+  color: white !important;
+}
+  border-color: $secondarycolor;
+  padding-top:0px !important;
+  p{
+    min-height: 20px;
+  }
+}
+.attachment{
+  line-height: 5;
+}
+.content-block{
+  opacity: 0;
+}
+.content-block-visible{
+  @extend .content-block;
+  opacity: 1 !important;
+}
+.screen{
+  min-height: 200px !important;
+  margin: auto;
+  border: 1px solid $secondarycolor;
+  border-radius: 5px;
+}
+.pagination{
+  a{
+    border-color: $secondarycolor !important;
+    color: $secondarycolor !important;
+  }
+  .active{
+    a{
+      background-color: $secondarycolor !important;
+      color: white !important;
+    }
+  }
+}
+.footer{
+  padding-top: 100px;
+  padding-bottom: 100px;
+  .btn{
+    background-color: $secondarycolor !important;
+    color: white !important;
+    padding: 15px 30px 15px 30px !important;
+  }
+}

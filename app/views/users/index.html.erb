@@ -1,7 +1,10 @@
 <%= render 'emailform'%>
+
 <h1>Users list</h1>
+
 <% @users.each do |user|%>
     <%= render user%>
 <% end %>
-
-<%= paginate @users %>
+<div class="text-center">
+    <%= paginate @users %>
+</div>

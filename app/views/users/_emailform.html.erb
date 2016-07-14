@@ -1,6 +1,9 @@
-<h1>Forms here</h1>
+<div id="emailform">
 <%= simple_form_for :email, :url => { :controller => 'users', :action => 'send_mail'} do |f|%>
-    <%=f.input :content%>
-    <%=f.file_field :file %>
-    <%=f.submit class:'btn btn-default'%>
+    <%=f.input :content, as: :text, label:"Email content"%>
+    <div class="attachment">
+      <%=f.file_field :file %>
+    </div>
+    <%=f.submit "Send email",class:'btn btn-default'%>
 <% end %>
+</div>
