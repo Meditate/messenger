@@ -49,4 +49,20 @@ RSpec.describe UserPolicy do
       expect(subject).to permit(admin,user)
     end
   end
+
+  permissions :send_mail? do
+
+    it "denies access if user" do
+      expect(subject).not_to permit(user)
+    end
+
+    it "allows access if editor" do
+      expect(subject).to permit(editor)
+    end
+
+    it "allows access if admin" do
+      expect(subject).to permit(admin)
+    end
+  end
+  
 end
