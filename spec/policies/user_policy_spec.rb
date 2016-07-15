@@ -64,5 +64,5 @@ RSpec.describe UserPolicy do
       expect(subject).to permit(admin)
     end
   end
-  
+
 end
