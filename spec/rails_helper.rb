@@ -36,4 +36,5 @@ RSpec.configure do |config|
 
   config.include FactoryGirl::Syntax::Methods
   config.include Features::SessionHelpers, :type => :feature
+  config.include Mailers::MailerHelpers, :type => :mailer
 end

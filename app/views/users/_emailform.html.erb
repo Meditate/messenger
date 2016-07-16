@@ -1,6 +1,6 @@
 <div id="emailform">
 <%= simple_form_for :email, :url => { :controller => 'users', :action => 'send_mail'} do |f|%>
-    <%=f.input :content, as: :text, label:"Email content", input_html: {value: params[:email] ? params[:email][:content] : ''}%>
+    <%=f.input :content, as: :text, label:"Email content"%>
     <div class="attachment">
       <%=f.file_field :file %>
     </div>
