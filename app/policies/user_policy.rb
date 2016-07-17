@@ -21,4 +21,8 @@ class UserPolicy
   def send_mail?
     @current_user.admin? or @current_user.editor?
   end
+
+  def create?
+    @current_user.admin?
+  end
 end

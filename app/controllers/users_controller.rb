@@ -41,6 +41,17 @@ class UsersController < ApplicationController
     redirect_to users_path
   end
 
+  def create
+    authorize User
+    @user=User.new(secured_params)
+    if @user.save
+      redirect_to users_path, notice: "User succesfully created"
+    else
+      redirect_to users_path, notice: "User wasnt created"
+    end
+
+  end
+
   private
 
   def set_params
@@ -48,7 +59,7 @@ class UsersController < ApplicationController
   end
 
   def secured_params
-    params.require(:user).permit(:role)
+    params.require(:user).permit(:email,:password,:role)
   end
 
 
