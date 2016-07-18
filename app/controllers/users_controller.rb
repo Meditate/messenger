@@ -4,7 +4,7 @@ class UsersController < ApplicationController
   after_action :verify_authorized
 
   def index
-    @users=User.order("role DESC").page(params[:page]).per(5)
+    @users=User.order("created_at DESC").page(params[:page]).per(5)
 
     authorize User
   end
@@ -44,10 +44,14 @@ class UsersController < ApplicationController
   def create
     authorize User
     @user=User.new(secured_params)
-    if @user.save
-      redirect_to users_path, notice: "User succesfully created"
-    else
-      redirect_to users_path, notice: "User wasnt created"
+
+    respond_to do |format|
+      if @user.save
+        format.html {redirect_to users_path, notice: "User succesfully created"}
+        format.js
+      else
+        format.html {redirect_to users_path, notice: "User wasnt created"}
+      end
     end
 
   end
