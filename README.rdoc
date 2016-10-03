@@ -2,6 +2,9 @@
 
 Hi guys! here we tested our knowledge at the testing, mailers, authorizations, and JS. link for the app is comming up, so wait a little :) 
 
+
+Code cleaning comming soon...
+
 == Gems We used in production:
 
 * kaminari
