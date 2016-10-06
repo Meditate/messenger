@@ -1,6 +1,6 @@
 == MessengerSPA
 
-Hi guys! here we tested our knowledge at the testing, mailers, authorizations, and JS. link for the app is comming up, so wait a little :) 
+Hi guys! here we tested our knowledge at testing, mailers, authorizations, and JS. link for the app is comming up, so wait a little :) 
 
 
 Code cleaning comming soon...
